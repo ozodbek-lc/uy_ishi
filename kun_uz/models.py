@@ -14,7 +14,7 @@ class Category(models.Model):
 
 
 class KunAuthor(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     full_name = models.CharField(max_length=200)
     image = models.ImageField(upload_to="authors/")
     bio = models.TextField(blank=True, null=True)
